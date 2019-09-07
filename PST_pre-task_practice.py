@@ -303,7 +303,8 @@ def run_block(fix):
                 rectangle_l = visual.Rect(win, pos=(-0.25,0), size=(0.75,0.75),units='height',fillColor=[0, 0, 0],
                 lineColor=[1, -1, -1])
                 rectangle_l.draw()
-
+                visual_stim1.draw()
+                visual_stim2.draw()
                 #from the dictionary find the image code associated with the key press
                 #taste=int(mydict['left'][1])
                 image=(mydict['1'][0])
@@ -332,7 +333,8 @@ def run_block(fix):
                 rectangle_r = visual.Rect(win, pos=(0.25,0), size=(0.75,0.75),units='height',fillColor=[0, 0, 0],
                 lineColor=[1, -1, -1])
                 rectangle_r.draw()
-
+                visual_stim1.draw()
+                visual_stim2.draw()
                 #from the dictonary get the image associated with the right key press
                 image=(mydict['2'][0])
                 trial_prob=(mydict['2'][1])
