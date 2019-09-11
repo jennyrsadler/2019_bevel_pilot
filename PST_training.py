@@ -25,7 +25,7 @@ from itertools import cycle
 monSize = [800, 600]
 info = {}
 info['fullscr'] = False
-info['port'] = '/dev/tty.usbserial'
+info['port'] = '/dev/tty.KeySerial1'
 info['participant'] = ''
 info['run']='run'
 info['computer']=(os.getcwd()).split('/')[2]
@@ -53,13 +53,13 @@ subdata['SS']={}
 subdata['broke_on_trial']={}
 subdata['simulated_response']=False
 
-subdata['onset']='/Users/'+info['computer']+'/Documents/bevel_task/efficiency/onset_'+info['run']
-subdata['jitter']='/Users/'+info['computer']+'/Documents/bevel_task/efficiency/jitter_'+info['run']
-subdata['conds']='/Users/'+info['computer']+'/Documents/bevel_task/efficiency/conds_'+info['run']
+subdata['onset']='/Users/'+info['computer']+'/Documents/2019_bevel_pilot/efficiency/onset_'+info['run']
+subdata['jitter']='/Users/'+info['computer']+'/Documents/2019_bevel_pilot/efficiency/jitter_'+info['run']
+subdata['conds']='/Users/'+info['computer']+'/Documents/2019_bevel_pilot/efficiency/conds_'+info['run']
 subdata['quit_key']='q'
 
 #######################################
-dataFileName='/Users/'+info['computer']+'/Documents/Output/bevel_%s_%s_%s_subdata.log'%(info['participant'],info['run'],subdata['datestamp'])
+dataFileName='/Users/'+info['computer']+'/Documents/2019_bevel_pilot/output/bevel_%s_%s_%s_training_subdata.log'%(info['participant'],info['run'],subdata['datestamp'])
 logging.console.setLevel(logging.INFO)
 logfile=logging.LogFile(dataFileName,level=logging.DATA)
 ratings_and_onsets = []
@@ -86,8 +86,8 @@ mls_sweet=3.0
 mls_unsweet=3.0
 mls_rinse=1.0
 delivery_time=5.0
-cue_time=2.0
-wait_time=1.0
+cue_time=3.0
+wait_time=2.0
 rinse_time=2.0
 fix=int(8)
 
@@ -154,12 +154,14 @@ fixation_text = visual.TextStim(win, text='+', pos=(0, 0), height=2)
 
 #Direction text (from Doll, Jacobs, Sanfey Frank (2009))
 scan_trigger_text = visual.TextStim(win, text='Waiting for scan trigger...', pos=(0, 0))
-example_images=['a.jpg','b.jpg']
-example_stim1=visual.ImageStim(win, image=N.zeros((300,300)),pos=(0.25,0.25), size=(0.25,0.25),units='height')
-example_stim2=visual.ImageStim(win, image=N.zeros((300,300)),pos=(-0.25,0.25), size=(0.25,0.25),units='height')
+example_images=['x.jpg','y.jpg']
+example_stim1=visual.ImageStim(win, image=N.zeros((300,300)),pos=(0.25,0.25), size=(0.25,0.35),units='height')
+example_stim2=visual.ImageStim(win, image=N.zeros((300,300)),pos=(-0.25,0.25), size=(0.25,0.35),units='height')
 example_stim1.setImage(example_images[0])#set which image appears
 example_stim2.setImage(example_images[1])#set which image appears
-scan_trigger_text = visual.TextStim(win, text='Two symbols will appear on the screen. One of the symbols is "correct" and one will be "incorrect", but it will not always be the same. You will have 2 seconds to press the button to guess which symbol is correct (left or right). If you guess correctly, you will receive a sweet taste. If you guessed incorrectly, you will receive a bitter taste. There is no ABSOLUTE right answer. Try to pick the symbol with the highest CHANCE of being correct', pos=(0, -0.6), height=0.75)
+example_stim1.draw()
+example_stim2.draw()
+scan_trigger_text = visual.TextStim(win, text='Two symbols will appear on the screen. You will have 2 seconds to guess which symbol is correct (1 = left or 2 = right). If you guess correctly, you will receive a sweet taste. If you guess incorrectly, you will receive a bitter taste. Each shape has a certain PROBABILITY of being correct. In each pair, one shape is MORE LIKELY to be correct. Try to learn which shape has the highest CHANCE of being correct', pos=(0, -3), height=0.75)
 
 #####################
 ######load in onset files########
@@ -460,11 +462,11 @@ run_block(fix)
 #subdata['key_responses']=keys_responses
 
 subdata.update(info)
-f=open('/Users/'+info['computer']+'/Documents/Output/Bevel_subdata_%s.pkl'%datestamp,'wb')
+f=open('/Users/'+info['computer']+'/Documents/2019_bevel_pilot/output/bevel_training_subdata_%s.pkl'%datestamp,'wb')
 pickle.dump(subdata,f)
 f.close()
 
-myfile = open('/Users/'+info['computer']+'/Documents/Output/Bevel_subdata_%s.csv'%datestamp.format(**info), 'wb')
+myfile = open('/Users/'+info['computer']+'/Documents/2019_bevel_pilot/output/bevel_training_subdata_%s.csv'%datestamp.format(**info), 'wb')
 wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
 wr.writerow(['event','data'])
 for row in ratings_and_onsets:

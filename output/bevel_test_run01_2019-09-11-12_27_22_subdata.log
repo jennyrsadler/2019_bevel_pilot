@@ -1,0 +1,19 @@
+14.3289 	DATA 	Keypress: o
+14.3297 	Level start key press 	25
+14.3297 	Level fixation 0.000001 	25
+22.3444 	Level fixation end 0.000001 	25
+22.3444 	Level START 	25
+22.7744 	Level c.jpg at position=right and d.jpg at position=left 	25
+24.3464 	DATA 	Keypress: 1
+24.3613 	Level keypress=1 at time= 1.551727 	25
+24.3763 	Level injecting via pump at address 2 and a keypress of 1 and image of d.jpg 	25
+30.3650 	Level RINSE 	25
+37.3444 	Level finished 	25
+37.7205 	Level c.jpg at position=right and d.jpg at position=left 	25
+39.3463 	DATA 	Keypress: 1
+39.3694 	Level keypress=1 at time= 1.612366 	25
+39.3761 	Level injecting via pump at address 1 and a keypress of 1 and image of d.jpg 	25
+45.3480 	Level RINSE 	25
+53.3444 	Level finished 	25
+53.7268 	Level c.jpg at position=left and d.jpg at position=right 	25
+55.3478 	Level Key Press Missed! 	25

@@ -114,7 +114,7 @@ example_stim1.setImage(example_images[0])#set which image appears
 example_stim2.setImage(example_images[1])#set which image appears
 example_stim1.draw()
 example_stim2.draw()
-scan_trigger_text = visual.TextStim(win, text='Two symbols will appear on the screen. You will have 2 seconds to guess which symbol is correct (1=left shape or 2=right shape). Each shape has a certain PROBABILITY of being correct. In each pair, one shape is MORE LIKELY to be correct. Try to learn which shape has the highest CHANCE of being correct in each pair', pos=(0, -2), height=0.75)
+scan_trigger_text = visual.TextStim(win, text='Two symbols will appear on the screen. You will have 2 seconds to guess which symbol is correct (1=left shape or 2=right shape). Each shape has a certain PROBABILITY of being correct. In each pair, one shape is MORE LIKELY to be correct. Try to learn which shape has the highest CHANCE of being correct', pos=(0, -2), height=0.75)
 
 #####################
 ######load in onset files########
@@ -363,7 +363,7 @@ def run_block(fix):
             logging.log(logging.DATA,"Key Press Missed!")
             keys=keys.append(['MISS',t])
             logging.flush()
-            message=visual.TextStim(win, text='Please answer quicker', pos=(0, 0), height=2)#this lasts throught the taste
+            message=visual.TextStim(win, text='Please answer faster', pos=(0, 0), height=2)#this lasts throught the taste
             message.draw()
             win.flip()
 

@@ -1,0 +1,12 @@
+47.8533 	DATA 	Keypress: o
+47.8538 	Level start key press 	25
+47.8538 	Level fixation 0.000001 	25
+55.8698 	Level fixation end 0.000001 	25
+55.8699 	Level START 	25
+56.2776 	Level a.jpg at position=right and b.jpg at position=left 	25
+57.8722 	DATA 	Keypress: 1
+57.8882 	Level keypress=1 at time= 1.581027 	25
+57.9031 	Level injecting via pump at address 2 and a keypress of 1 and image of b.jpg 	25
+63.8902 	Level RINSE 	25
+70.8699 	Level finished 	25
+70.8720 	DATA 	Keypress: q
